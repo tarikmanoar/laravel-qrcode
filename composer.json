@@ -1,6 +1,5 @@
 {
     "name": "tarikmanoar/laravel-qrcode",
-    "version": "1.0.0",
     "description": "Laravel QrCode is a QR code generator made for Laravel.",
     "keywords": ["qrcode", "laravel", "simple", "generator", "wrapper"],
     "homepage": "https://tarikmanoar.github.io/laravel-qrcode",
