@@ -1,9 +1,20 @@
 Laravel QrCode
 ========================
 
-![Tests](https://github.com/tarikmanoar/laravel-qrcode/actions/workflows/pest.yml/badge.svg)
+![Tests](https://github.com/tarikmanoar/laravel-qrcode/actions/workflows/run-tests.yml/badge.svg)
 [![Latest Stable Version](https://poser.pugx.org/tarikmanoar/laravel-qrcode/v/stable.svg)](https://packagist.org/packages/tarikmanoar/laravel-qrcode)
 [![License](https://poser.pugx.org/tarikmanoar/laravel-qrcode/license.svg)](https://packagist.org/packages/tarikmanoar/laravel-qrcode)
+
+
+[![GitHub stars](https://img.shields.io/github/stars/tarikmanoar/laravel-qrcode?style=social)](ASD)
+[![GitHub forks](https://img.shields.io/github/forks/tarikmanoar/laravel-qrcode?style=social)](ASD)
+[![GitHub watchers](https://img.shields.io/github/watchers/tarikmanoar/laravel-qrcode?style=social)](ASD)
+[![GitHub contributors](https://img.shields.io/github/contributors/tarikmanoar/laravel-qrcode?style=social)](ASD)
+[![GitHub issues](https://img.shields.io/github/issues/tarikmanoar/laravel-qrcode?style=social)](ASD)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/tarikmanoar/laravel-qrcode?style=social)](ASD)
+[![GitHub license](https://img.shields.io/github/license/tarikmanoar/laravel-qrcode?style=social)](ASD)
+[![GitHub last commit](https://img.shields.io/github/last-commit/tarikmanoar/laravel-qrcode?style=social)](ASD)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/tarikmanoar/laravel-qrcode?style=social)](ASD)
 
 ## Installation
 
