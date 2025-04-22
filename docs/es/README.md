@@ -1,5 +1,8 @@
-[![Build Status](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode.svg?branch=master)](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/stable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![License](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Total Downloads](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
+[![Build Status](https://app.travis-ci.com/tarikmanoar/laravel-qrcode.svg?token=ioBTAkUNWNFwXMq7HNHD&branch=main)](https://app.travis-ci.com/tarikmanoar/laravel-qrcode) [![Latest Stable Version](https://poser.pugx.org/tarikmanoar/laravel-qrcode/v/stable.svg)](https://packagist.org/packages/tarikmanoar/laravel-qrcode) [![Latest Unstable Version](https://poser.pugx.org/tarikmanoar/laravel-qrcode/v/unstable.svg)](https://packagist.org/packages/tarikmanoar/laravel-qrcode) [![License](https://poser.pugx.org/tarikmanoar/laravel-qrcode/license.svg)](https://packagist.org/packages/tarikmanoar/laravel-qrcode) [![Total Downloads](https://poser.pugx.org/tarikmanoar/laravel-qrcode/downloads.svg)](https://packagist.org/packages/tarikmanoar/laravel-qrcode)
 
+### [Bangla](https://tarikmanoar.github.io/laravel-qrcode/docs/bn) | [Deutsch](https://tarikmanoar.github.io/laravel-qrcode/docs/de) | [Español](https://tarikmanoar.github.io/laravel-qrcode/docs/es) | [Français](https://tarikmanoar.github.io/laravel-qrcode/docs/fr) | [Italiano](https://tarikmanoar.github.io/laravel-qrcode/docs/it) | [Português](https://tarikmanoar.github.io/laravel-qrcode/docs/pt-br) | [Русский](https://tarikmanoar.github.io/laravel-qrcode/docs/ru) | [日本語](https://tarikmanoar.github.io/laravel-qrcode/docs/ja) | [한국어](https://tarikmanoar.github.io/laravel-qrcode/docs/kr) | [हिंदी](https://tarikmanoar.github.io/laravel-qrcode/docs/hi) | [简体中文](https://tarikmanoar.github.io/laravel-qrcode/docs/zh-cn)
+
+<a id="docs-introduction"></a>
 
 - [Introducción](#docs-introduction)
 - [Traducciones](#docs-translations)
@@ -10,7 +13,6 @@
 - [Uso Común de QrCode](#docs-common-usage)
 - [Uso fuera de Laravel](#docs-outside-laravel)
 
-<a id="docs-introduction"></a>
 ## Introducción
 Laravel QrCode es un empaquetador de fácil uso para el popular framework Laravel basado en el gran trabajo proporcionado por [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode).  Hemos creado una interfaz que es familiar y fácil de usar para los usuarios de Laravel.
 

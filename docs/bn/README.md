@@ -1,23 +1,19 @@
 [![Build Status](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode.svg?branch=master)](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/stable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![License](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Total Downloads](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
 
-#### [English](http://tarikmanoar.github.io/laravel--qrcode/en) | [Deutsch](http://tarikmanoar.github.io/laravel--qrcode/de) | [Español](http://tarikmanoar.github.io/laravel--qrcode/es) | [Français](http://tarikmanoar.github.io/laravel--qrcode/fr) | [Italiano](http://tarikmanoar.github.io/laravel--qrcode/it) | [Português](http://tarikmanoar.github.io/laravel--qrcode/pt-br) | [Русский](http://tarikmanoar.github.io/laravel--qrcode/ru) | [日本語](http://tarikmanoar.github.io/laravel--qrcode/ja) | [한국어](http://tarikmanoar.github.io/laravel--qrcode/kr) | [हिंदी](http://tarikmanoar.github.io/laravel--qrcode/hi) | [简体中文](http://tarikmanoar.github.io/laravel--qrcode/zh-cn)
+#### [English](https://tarikmanoar.github.io/laravel-qrcode/docs/en) | [Deutsch](https://tarikmanoar.github.io/laravel-qrcode/docs/de) | [Español](https://tarikmanoar.github.io/laravel-qrcode/docs/es) | [Français](https://tarikmanoar.github.io/laravel-qrcode/docs/fr) | [Italiano](https://tarikmanoar.github.io/laravel-qrcode/docs/it) | [Português](https://tarikmanoar.github.io/laravel-qrcode/docs/pt-br) | [Русский](https://tarikmanoar.github.io/laravel-qrcode/docs/ru) | [日本語](https://tarikmanoar.github.io/laravel-qrcode/docs/ja) | [한국어](https://tarikmanoar.github.io/laravel-qrcode/docs/kr) | [हिंदी](https://tarikmanoar.github.io/laravel-qrcode/docs/hi) | [简体中文](https://tarikmanoar.github.io/laravel-qrcode/docs/zh-cn)
 
-## আমাদের সহজ, ফ্রি ফাইল ট্রান্সফার সার্ভিস ব্যবহার করুন [keep.sh](https://keep.sh)
+# Laravel QrCode
 
-[![keep.sh](https://user-images.githubusercontent.com/624784/95805291-1121e980-0cd3-11eb-9048-0264bd9f2fd7.gif)](https://keep.sh)
-
-আপনার টার্মিনাল থেকে একটিমাত্র কার্ল কমান্ড দিয়ে ফাইল আপলোড করুন! `curl --upload-file file.txt https://keep.sh`
+- [ভূমিকা](#docs-introduction)
+- [অনুবাদ](#docs-translations)
+- [কনফিগারেশন](#docs-configuration)
+- [সহজ ধারণা](#docs-ideas)
+- [ব্যবহার](#docs-usage)
+- [হেল্পার](#docs-helpers)
+- [প্রিফিক্স](#docs-common-usage)
+- [Laravel ছাড়া ব্যবহার](#docs-outside-laravel)
 
 ## ব্যবহারের ক্ষেত্র
-<p align="center">
-	<a href="https://www.rsvpify.com">
-		<img width="300" src="https://rsvpify.com/wp-content/uploads/2017/03/rsvpify-logo-header-rsvp.png">
-	</a>
-</p>
-<p align="center">
-	<a href="https://rsvpify.com/sell-tickets">অনলাইনে টিকিট বিক্রির প্ল্যাটফর্ম</a>
-</p>
-
 <a id="docs-introduction"></a>
 ## ভূমিকা
 Laravel QrCode হলো জনপ্রিয় Laravel ফ্রেমওয়ার্কের (10, 11, 12) জন্য একটি সহজে ব্যবহারযোগ্য র‍্যাপার, যা [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode) এর উপর ভিত্তি করে তৈরি। আপনি Pest ব্যবহার করে টেস্টিংয়ের জন্য ডিফল্ট ইনস্টল, কনফিগার এবং পাবলিশ করতে পারেন।

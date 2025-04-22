@@ -15,7 +15,7 @@ Run the following command to install the package:
 composer require tarikmanoar/laravel-qrcode
 ```
 
-## [Bangla](https://tarikmanoar.github.io/laravel-qrcode/bn) [Deutsch](https://tarikmanoar.github.io/laravel-qrcode/de) | [Español](https://tarikmanoar.github.io/laravel-qrcode/es) | [Français](https://tarikmanoar.github.io/laravel-qrcode/fr) | [Italiano](https://tarikmanoar.github.io/laravel-qrcode/it) | [Português](https://tarikmanoar.github.io/laravel-qrcode/pt-br) | [Русский](https://tarikmanoar.github.io/laravel-qrcode/ru) | [日本語](https://tarikmanoar.github.io/laravel-qrcode/ja) | [한국어](https://tarikmanoar.github.io/laravel-qrcode/kr) | [हिंदी](https://tarikmanoar.github.io/laravel-qrcode/hi) | [简体中文](https://tarikmanoar.github.io/laravel-qrcode/zh-cn) | [العربية](https://tarikmanoar.github.io/laravel-qrcode/ar)
+## [Bangla](https://tarikmanoar.github.io/laravel-qrcode/docs/bn) | [Deutsch](https://tarikmanoar.github.io/laravel-qrcode/docs/de) | [Español](https://tarikmanoar.github.io/laravel-qrcode/docs/es) | [Français](https://tarikmanoar.github.io/laravel-qrcode/docs/fr) | [Italiano](https://tarikmanoar.github.io/laravel-qrcode/docs/it) | [Português](https://tarikmanoar.github.io/laravel-qrcode/docs/pt-br) | [Русский](https://tarikmanoar.github.io/laravel-qrcode/docs/ru) | [日本語](https://tarikmanoar.github.io/laravel-qrcode/docs/ja) | [한국어](https://tarikmanoar.github.io/laravel-qrcode/docs/kr) | [हिंदी](https://tarikmanoar.github.io/laravel-qrcode/docs/hi) | [简体中文](https://tarikmanoar.github.io/laravel-qrcode/docs/zh-cn) | [العربية](https://tarikmanoar.github.io/laravel-qrcode/docs/ar)
 
 Language files are currently out of date.  We need volunteers to upgrade them to v4!  Please submit a PR request!
 
@@ -24,7 +24,7 @@ Laravel QrCode is an easy to use wrapper for the popular Laravel framework based
 
 ## Official Documentation
 
-Documentation for Laravel QrCode can be found on our [website.](http://tarikmanoar.github.io/laravel--qrcode/en)
+Documentation for Laravel QrCode can be found on our [website.](https://tarikmanoar.github.io/laravel-qrcode/docs/en)
 
 ## Examples
 
