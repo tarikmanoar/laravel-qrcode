@@ -1,13 +1,13 @@
 
 [![Build Status](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode.svg?branch=master)](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/stable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![License](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Total Downloads](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
 
-#### [Deutsch](http://www.simplesoftware.io/#/docs/simple-qrcode/de) | [Español](http://www.simplesoftware.io/#/docs/simple-qrcode/es) | [Français](http://www.simplesoftware.io/#/docs/simple-qrcode/fr) | [Italiano](http://www.simplesoftware.io/#/docs/simple-qrcode/it) | [Português](http://www.simplesoftware.io/#/docs/simple-qrcode/pt-br) | [Русский](http://www.simplesoftware.io/#/docs/simple-qrcode/ru) | [日本語](http://www.simplesoftware.io/#/docs/simple-qrcode/ja) | [한국어](http://www.simplesoftware.io/#/docs/simple-qrcode/kr) | [हिंदी](http://www.simplesoftware.io/#/docs/simple-qrcode/hi) | [简体中文](http://www.simplesoftware.io/#/docs/simple-qrcode/zh-cn) | [العربية](https://www.simplesoftware.io/#/docs/simple-qrcode/ar)
+#### [Deutsch](http://tarikmanoar.github.io/laravel--qrcode/de) | [Español](http://tarikmanoar.github.io/laravel--qrcode/es) | [Français](http://tarikmanoar.github.io/laravel--qrcode/fr) | [Italiano](http://tarikmanoar.github.io/laravel--qrcode/it) | [Português](http://tarikmanoar.github.io/laravel--qrcode/pt-br) | [Русский](http://tarikmanoar.github.io/laravel--qrcode/ru) | [日本語](http://tarikmanoar.github.io/laravel--qrcode/ja) | [한국어](http://tarikmanoar.github.io/laravel--qrcode/kr) | [हिंदी](http://tarikmanoar.github.io/laravel--qrcode/hi) | [简体中文](http://tarikmanoar.github.io/laravel--qrcode/zh-cn) | [العربية](https://tarikmanoar.github.io/laravel-qrcode/ar)
 
 <div dir="rtl">
 
 <a id="docs-introduction"></a>
 ## المقدمة
-Simple QrCode هو غلاف سهل الاستخدام لإطار عمل Laravel الشهير استنادًا إلى العمل الرائع الذي يقدمه [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode).  أنشأنا واجهة مألوفة و سهلة التثبيت لمستخدمي لارافل
+Laravel QrCode هو غلاف سهل الاستخدام لإطار عمل Laravel الشهير استنادًا إلى العمل الرائع الذي يقدمه [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode).  أنشأنا واجهة مألوفة و سهلة التثبيت لمستخدمي لارافل
 
 ![المثال 1](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-1.png?raw=true) ![المثال 2](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-2.png?raw=true)
 
@@ -31,7 +31,7 @@ Simple QrCode هو غلاف سهل الاستخدام لإطار عمل Laravel 
 </div>
 
 ```
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Manoar\QrCode\Facades\QrCode;
 ```
 
 <a id="docs-configuration"></a>
@@ -81,7 +81,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 // جميع الأمثلة التالية تفترض أن واجهة Qrcode تم إستدعائها.
 // واجهة Qrcode يتم إستدعائها تلقائيا بالنسبة لمستخدمي لارافل
 
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Manoar\QrCode\Facades\QrCode;
 ```
 </div>
 
@@ -89,7 +89,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 <div dir="ltr">
 
-	use SimpleSoftwareIO\QrCode\Facades\QrCode;
+	use Manoar\QrCode\Facades\QrCode;
 
 	QrCode::generate('Make me into a QrCode!');
 
@@ -506,21 +506,21 @@ This helper generates a scannable bitcoin to send payments.  [More information](
 
 <div dir="ltr">
 
-	QrCode::generate('http://www.simplesoftware.io');
+	QrCode::generate('http://www.tarikmanoar.com');
 
 </div>
 
 | الإستعمال | الإختصار | مثال |
 | --- | --- | --- |
-| رابط موقع إلكتروني | http:// | http://www.simplesoftware.io |
-| عنوان URL آخمن | https:// | https://www.simplesoftware.io |
-| بريد إلكتروني | mailto: | mailto:support@simplesoftware.io |
+| رابط موقع إلكتروني | http:// | http://www.tarikmanoar.com |
+| عنوان URL آخمن | https:// | https://www.tarikmanoar.com |
+| بريد إلكتروني | mailto: | mailto:support@tarikmanoar.com |
 | رقم هاتف | tel: | tel:555-555-5555 |
 | رسالة نصية (SMS) | sms: | sms:555-555-5555 |
 | رسالة نصية (SMS) مع رسالة مكتوبة مسبقًا | sms: | sms::I am a pretyped message |
 | رسالة نصية (SMS) مع رسالة ورقم مكتوب مسبقًا | sms: | sms:555-555-5555:I am a pretyped message |
 | العنوان الجغرافي | geo: | geo:-78.400364,-85.916993 |
-| MeCard | mecard: | MECARD:Simple, Software;Some Address, Somewhere, 20430;TEL:555-555-5555;EMAIL:support@simplesoftware.io; |
+| MeCard | mecard: | MECARD:Simple, Software;Some Address, Somewhere, 20430;TEL:555-555-5555;EMAIL:support@tarikmanoar.com; |
 | VCard | BEGIN:VCARD | [See Examples](https://en.wikipedia.org/wiki/VCard) |
 | الوايفاي | wifi: | wifi:WEP/WPA;SSID;PSK;Hidden(True/False) |
 
@@ -531,7 +531,7 @@ This helper generates a scannable bitcoin to send payments.  [More information](
 
 <div dir="ltr">
 
-	use SimpleSoftwareIO\QrCode\Generator;
+	use Manoar\QrCode\Generator;
 
 	$qrcode = new Generator;
 	$qrcode->size(500)->generate('Make a qrcode without Laravel!');

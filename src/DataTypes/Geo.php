@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleSoftwareIO\QrCode\DataTypes;
+namespace Manoar\QrCode\DataTypes;
 
 class Geo implements DataTypeInterface
 {

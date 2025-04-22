@@ -34,12 +34,12 @@
 #### Service Provider
 
 ###### Laravel <= 5.4
-config/app.php में providers array में SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class को रजिस्टर करें।
+config/app.php में providers array में Manoar\QrCode\QrCodeServiceProvider::class को रजिस्टर करें।
 
 #### Aliases (उपनाम)
 
 ###### Laravel <= 5.4
-आखिर में 'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class को config/app.php विन्यास फ़ाइल में aliases array में रजिस्टर करें।
+आखिर में 'QrCode' => Manoar\QrCode\Facades\QrCode::class को config/app.php विन्यास फ़ाइल में aliases array में रजिस्टर करें।
 
 <a id="docs-ideas"></a>
 ## साधारण विचार
@@ -312,20 +312,20 @@ Generate QrCode बनाने के काम आता है।
 
 आप निम्न तालिका मे से `generate` अनुभाग मे पाए गये उपसर्ग का उपयोग करके और अधिक उन्नत जानकारी स्टोर करने के लिए QrCode का निर्माण कर सकते हैं:
 
-	QrCode::generate('http://www.simplesoftware.io');
+	QrCode::generate('http://www.tarikmanoar.com');
 
 
 | प्रयोग | उपसर्ग | उदाहरण |
 | --- | --- | --- |
-| Website URL | http:// | http://www.simplesoftware.io |
-| Secured URL | https:// | https://www.simplesoftware.io |
-| E-mail Address | mailto: | mailto:support@simplesoftware.io |
+| Website URL | http:// | http://www.tarikmanoar.com |
+| Secured URL | https:// | https://www.tarikmanoar.com |
+| E-mail Address | mailto: | mailto:support@tarikmanoar.com |
 | Phone Number | tel: | tel:555-555-5555 |
 | Text (SMS) | sms: | sms:555-555-5555 |
 | Text (SMS) With Pretyped Message | sms: | sms::I am a pretyped message |
 | Text (SMS) With Pretyped Message and Number | sms: | sms:555-555-5555:I am a pretyped message |
 | Geo Address | geo: | geo:-78.400364,-85.916993 |
-| MeCard | mecard: | MECARD:Simple, Software;Some Address, Somewhere, 20430;TEL:555-555-5555;EMAIL:support@simplesoftware.io; |
+| MeCard | mecard: | MECARD:Simple, Software;Some Address, Somewhere, 20430;TEL:555-555-5555;EMAIL:support@tarikmanoar.com; |
 | VCard | BEGIN:VCARD | [See Examples](https://en.wikipedia.org/wiki/VCard) |
 | Wifi | wifi: | wifi:WEP/WPA;SSID;PSK;Hidden(True/False) |
 
@@ -334,7 +334,7 @@ Generate QrCode बनाने के काम आता है।
 
 आप `BaconQrCodeGenerator` नमक नयी कक्षा स्थापित करके इस पैकेज का लरावेल के बाहर भी उपयोग कर सकते हैं।
 
-	use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
+	use Manoar\QrCode\BaconQrCodeGenerator;
 
 	$qrcode = new BaconQrCodeGenerator;
 	$qrcode->size(500)->generate('Make a qrcode without Laravel!');

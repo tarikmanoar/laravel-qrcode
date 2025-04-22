@@ -1,23 +1,25 @@
 {
-    "name": "simplesoftwareio/simple-qrcode",
-    "description": "Simple QrCode is a QR code generator made for Laravel.",
+    "name": "tarikmanoar/laravel-qrcode",
+    "version": "1.0.0",
+    "description": "Laravel QrCode is a QR code generator made for Laravel.",
     "keywords": ["qrcode", "laravel", "simple", "generator", "wrapper"],
-    "homepage": "https://www.simplesoftware.io/#/docs/simple-qrcode",
-    "license" : "MIT",
+    "homepage": "https://tarikmanoar.github.io/laravel-qrcode",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Simple Software LLC",
-            "email": "support@simplesoftware.io"
+            "name": "Tarik Manoar",
+            "email": "tarikmanoar@gmail.com"
         }
     ],
     "require": {
-        "php": ">=7.2|^8.0",
-      	"ext-gd": "*",
-        "bacon/bacon-qr-code": "^2.0"
+        "php": "^8.0",
+        "ext-gd": "*",
+        "bacon/bacon-qr-code": "^3.0"
     },
     "require-dev": {
-        "mockery/mockery": "~1",
-        "phpunit/phpunit": "~9"
+        "mockery/mockery": "^1.6",
+        "pestphp/pest": "^3.8",
+        "pestphp/pest-plugin-laravel": "^3.1"
     },
     "suggest": {
         "ext-imagick": "Allows the generation of PNG QrCodes.",
@@ -25,20 +27,31 @@
     },
     "autoload": {
         "psr-4": {
-            "SimpleSoftwareIO\\QrCode\\": "src"
+            "Manoar\\QrCode\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
         }
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "pest"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider"
+                "Manoar\\QrCode\\QrCodeServiceProvider"
             ],
             "aliases": {
-                "QrCode": "SimpleSoftwareIO\\QrCode\\Facades\\QrCode"
-            }
+                "QrCode": "Manoar\\QrCode\\Facades\\QrCode"
+            },
+            "config": "config/laravel-qrcode.php"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
         }
     }
 }

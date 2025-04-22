@@ -12,7 +12,7 @@
 
 <a id="docs-introduction"></a>
 ## 介绍
-Simple QrCode 是基于[Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode) 开发，适用于Laravel框架的软件包. 我们的目的是让二维码能更加便捷的使用在Laravel框架的项目里.
+Laravel QrCode 是基于[Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode) 开发，适用于Laravel框架的软件包. 我们的目的是让二维码能更加便捷的使用在Laravel框架的项目里.
 
 ![Example 1](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-1.png?raw=true) ![Example 2](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-2.png?raw=true)
 
@@ -35,12 +35,12 @@ Laravel将会自动完成安装工作.
 #### 添加 Service Provider
 
 ###### Laravel <= 5.4
-注册 `SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class` 至 `config/app.php` 的 `providers` 数组里.
+注册 `Manoar\QrCode\QrCodeServiceProvider::class` 至 `config/app.php` 的 `providers` 数组里.
 
 #### 添加 Aliases
 
 ###### Laravel <= 5.4
-最后,注册 `'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class` 至 `config/app.php` 的 `aliases` 数组里.
+最后,注册 `'QrCode' => Manoar\QrCode\Facades\QrCode::class` 至 `config/app.php` 的 `aliases` 数组里.
 
 <a id="docs-ideas"></a>
 ## 简例
@@ -377,20 +377,20 @@ QrCode 创建二维码时可以使用不同的编码.  默认使用 `ISO-8859-1`
 
 你还能通过下面表中的前缀信息创建适合更多场合的二维码
 
-	QrCode::generate('http://www.simplesoftware.io');
+	QrCode::generate('http://www.tarikmanoar.com');
 
 
 | 使用场景 | 前缀 | 例子 |
 | --- | --- | --- |
-| 网址 | http:// | http://www.simplesoftware.io |
-| 加密网址 | https:// | https://www.simplesoftware.io |
-| E-mail 地址 | mailto: | mailto:support@simplesoftware.io |
+| 网址 | http:// | http://www.tarikmanoar.com |
+| 加密网址 | https:// | https://www.tarikmanoar.com |
+| E-mail 地址 | mailto: | mailto:support@tarikmanoar.com |
 | 电话号码 | tel: | tel:555-555-5555 |
 | 文字短信 | sms: | sms:555-555-5555 |
 | 文字短信内容 | sms: | sms::I am a pretyped message |
 | 文字短信同时附带手机号和短信内容 | sms: | sms:555-555-5555:I am a pretyped message |
 | 坐标 | geo: | geo:-78.400364,-85.916993 |
-| MeCard名片 | mecard: | MECARD:Simple, Software;Some Address, Somewhere, 20430;TEL:555-555-5555;EMAIL:support@simplesoftware.io; |
+| MeCard名片 | mecard: | MECARD:Simple, Software;Some Address, Somewhere, 20430;TEL:555-555-5555;EMAIL:support@tarikmanoar.com; |
 | VCard名片 | BEGIN:VCARD | [更多范例](https://en.wikipedia.org/wiki/VCard) |
 | Wifi | wifi: | wifi:WEP/WPA;SSID;PSK;Hidden(True/False) |
 
@@ -399,7 +399,7 @@ QrCode 创建二维码时可以使用不同的编码.  默认使用 `ISO-8859-1`
 
 你还可以在Laravel框架之外调用,只需要实例化 `BaconQrCodeGenerator` 类.
 
-	use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
+	use Manoar\QrCode\BaconQrCodeGenerator;
 
 	$qrcode = new BaconQrCodeGenerator;
 	$qrcode->size(500)->generate('Make a qrcode without Laravel!');

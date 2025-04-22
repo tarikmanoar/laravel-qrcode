@@ -13,7 +13,7 @@
 <a id="docs-introduction"></a>
 ## Введение
 
-Simple QrCode - простая в использовании обёртка для популярного фреймворка Laravel на основе превосходного проекта [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode).
+Laravel QrCode - простая в использовании обёртка для популярного фреймворка Laravel на основе превосходного проекта [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode).
 Мы создали интерфейс, который привычен и прост в установке для пользователей Laravel.
 
 <a id="docs-translations"></a>
@@ -47,7 +47,7 @@ composer require simplesoftwareio/simple-qrcode
 
 Добавьте строчку 
 ```
-SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class
+Manoar\QrCode\QrCodeServiceProvider::class
 ``` 
 в конец массива `providers` в файле `config/app.php`.
 
@@ -55,7 +55,7 @@ SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class
 
 Добавьте строчку 
 ```
-'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class
+'QrCode' => Manoar\QrCode\Facades\QrCode::class
 ``` 
 в конец массива `aliases` в файле `config/app.php`.
 
@@ -408,20 +408,20 @@ QrCode::wiFi([
 Составьте строку по образцу, как в таблице ниже, и передайте её в метод `generate()`, чтобы добиться того же эффекта, как при использовании хелперов:
 
 ```php
-QrCode::generate('http://www.simplesoftware.io');
+QrCode::generate('http://www.tarikmanoar.com');
 ```
 
 | Применение | Префикс | Пример |
 | --- | --- | --- |
-| Ссылка на сайт | http:// | http://www.simplesoftware.io |
-| Безопасная ссылка | https:// | https://www.simplesoftware.io |
-| Email | mailto: | mailto:support@simplesoftware.io |
+| Ссылка на сайт | http:// | http://www.tarikmanoar.com |
+| Безопасная ссылка | https:// | https://www.tarikmanoar.com |
+| Email | mailto: | mailto:support@tarikmanoar.com |
 | Телефон для звонка | tel: | tel:555-555-5555 |
 | СМС | sms: | sms:555-555-5555 |
 | СМС с текстом сообщения | sms: | sms::Какое-то сообщение |
 | СМС с текстом сообщения и номером адресата | sms: | sms:555-555-5555:Какое-то сообщение |
 | Местоположение на карте | geo: | geo:-78.400364,-85.916993 |
-| Визитка (MeCard) | mecard: | MECARD:Simple, Software;Some Address, Somewhere, 20430;TEL:555-555-5555;EMAIL:support@simplesoftware.io; |
+| Визитка (MeCard) | mecard: | MECARD:Simple, Software;Some Address, Somewhere, 20430;TEL:555-555-5555;EMAIL:support@tarikmanoar.com; |
 | Контакт (VCard) | BEGIN:VCARD | [Примеры](https://ru.wikipedia.org/wiki/VCard) |
 | Wifi | wifi: | wifi:WEP/WPA;SSID;PSK;Hidden(True/False) |
 
@@ -431,7 +431,7 @@ QrCode::generate('http://www.simplesoftware.io');
 Вы можете использовать этот пакет за пределами Laravel, просто создав новый объект класса `BaconQrCodeGenerator`.
 
 ```php
-use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
+use Manoar\QrCode\BaconQrCodeGenerator;
 
 $qrcode = new BaconQrCodeGenerator;
 $qrcode->size(500)->generate('Создайте QR-код без Laravel!');

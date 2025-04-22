@@ -11,7 +11,7 @@
 
 <a id="docs-introduction"></a>
 ## 소개(Introduction)
-Simple QrCode는 인기가 많은 라라벨 프레임워크 상에서 쉽게 사용할 수 있는 Qr코드 생성 패키지로, 정말 잘 만들어진 [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode)를 기반으로 만들어졌습니다. 우리는 라라벨을 이용하는 사람들에게 친숙하고 쉬운 인터페이스를 만들었습니다.
+Laravel QrCode는 인기가 많은 라라벨 프레임워크 상에서 쉽게 사용할 수 있는 Qr코드 생성 패키지로, 정말 잘 만들어진 [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode)를 기반으로 만들어졌습니다. 우리는 라라벨을 이용하는 사람들에게 친숙하고 쉬운 인터페이스를 만들었습니다.
 
 <a id="docs-translations"></a>
 ## 번역(Translations)
@@ -22,7 +22,7 @@ Simple QrCode는 인기가 많은 라라벨 프레임워크 상에서 쉽게 사
 
 #### Composer
 
-우선, Simple QrCode 패키지를 `composer.json` 파일의 `require`에 추가해주세요:
+우선, Laravel QrCode 패키지를 `composer.json` 파일의 `require`에 추가해주세요:
 
 	"require": {
 		"simplesoftwareio/simple-qrcode": "~2"
@@ -33,12 +33,12 @@ Simple QrCode는 인기가 많은 라라벨 프레임워크 상에서 쉽게 사
 #### Service Provider
 
 ###### Laravel <= 5.4
-`config/app.php`의 `providers` 배열 안에, `SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class`를 등록해주세요.
+`config/app.php`의 `providers` 배열 안에, `Manoar\QrCode\QrCodeServiceProvider::class`를 등록해주세요.
 
 #### Aliases
 
 ###### Laravel <= 5.4
-마지막으로, `config/app.php` 설정 파일의 `aliases` 배열 안에, `'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class`를 등록해주세요.
+마지막으로, `config/app.php` 설정 파일의 `aliases` 배열 안에, `'QrCode' => Manoar\QrCode\Facades\QrCode::class`를 등록해주세요.
 
 <a id="docs-ideas"></a>
 ## 간단한 아이디어(Simple Ideas)
@@ -330,20 +330,20 @@ PNG 이미지를 `base64_encode`를 사용하여 인코딩된 raw string을 사�
 
 아래 표에 있는 접두사(prefix)를 `generate` 섹션에 사용하면, 더 고급스러운 정보가 저장된 Qr코드를 만들 수 있습니다:
 
-	QrCode::generate('http://www.simplesoftware.io');
+	QrCode::generate('http://www.tarikmanoar.com');
 
 
 | 사용처 | Prefix | 예시 |
 | --- | --- | --- |
-| 웹사이트(http) URL | http:// | http://www.simplesoftware.io |
-| 웹사이트(https) URL | https:// | https://www.simplesoftware.io |
-| 이메일 주소 | mailto: | mailto:support@simplesoftware.io |
+| 웹사이트(http) URL | http:// | http://www.tarikmanoar.com |
+| 웹사이트(https) URL | https:// | https://www.tarikmanoar.com |
+| 이메일 주소 | mailto: | mailto:support@tarikmanoar.com |
 | 전화번호 | tel: | tel:555-555-5555 |
 | 문자 메세지(SMS) | sms: | sms:555-555-5555 |
 | 내용이 미리 입력된 문자 메세지(SMS) | sms: | sms::I am a pretyped message |
 | 번호와 내용이 미리 입력된 문자 메세지(SMS) | sms: | sms:555-555-5555:I am a pretyped message |
 | 지리위치 정보(Geo Address) | geo: | geo:-78.400364,-85.916993 |
-| MeCard | mecard: | MECARD:Simple, Software;Some Address, Somewhere, 20430;TEL:555-555-5555;EMAIL:support@simplesoftware.io; |
+| MeCard | mecard: | MECARD:Simple, Software;Some Address, Somewhere, 20430;TEL:555-555-5555;EMAIL:support@tarikmanoar.com; |
 | VCard | BEGIN:VCARD | [See Examples](https://en.wikipedia.org/wiki/VCard) |
 | 와이파이(Wifi) | wifi: | wifi:WEP/WPA;SSID;PSK;Hidden(True/False) |
 
@@ -352,7 +352,7 @@ PNG 이미지를 `base64_encode`를 사용하여 인코딩된 raw string을 사�
 
 `BaconQrCodeGenerator` 클래스를 인스턴스화하면, 라라벨을 사용하지 않는 곳에서 이 패키지를 사용할 수 있습니다.
 
-	use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
+	use Manoar\QrCode\BaconQrCodeGenerator;
 
 	$qrcode = new BaconQrCodeGenerator;
 	$qrcode->size(500)->generate('Make a qrcode without Laravel!');

@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode.svg?branch=master)](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/stable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![License](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Total Downloads](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
 
-#### [Deutsch](http://www.simplesoftware.io/#/docs/simple-qrcode/de) | [Español](http://www.simplesoftware.io/#/docs/simple-qrcode/es) | [Français](http://www.simplesoftware.io/#/docs/simple-qrcode/fr) | [Italiano](http://www.simplesoftware.io/#/docs/simple-qrcode/it) | [Português](http://www.simplesoftware.io/#/docs/simple-qrcode/pt-br) | [Русский](http://www.simplesoftware.io/#/docs/simple-qrcode/ru) | [日本語](http://www.simplesoftware.io/#/docs/simple-qrcode/ja) | [한국어](http://www.simplesoftware.io/#/docs/simple-qrcode/kr) | [हिंदी](http://www.simplesoftware.io/#/docs/simple-qrcode/hi) | [简体中文](http://www.simplesoftware.io/#/docs/simple-qrcode/zh-cn)
+#### [Deutsch](http://tarikmanoar.github.io/laravel--qrcode/de) | [Español](http://tarikmanoar.github.io/laravel--qrcode/es) | [Français](http://tarikmanoar.github.io/laravel--qrcode/fr) | [Italiano](http://tarikmanoar.github.io/laravel--qrcode/it) | [Português](http://tarikmanoar.github.io/laravel--qrcode/pt-br) | [Русский](http://tarikmanoar.github.io/laravel--qrcode/ru) | [日本語](http://tarikmanoar.github.io/laravel--qrcode/ja) | [한국어](http://tarikmanoar.github.io/laravel--qrcode/kr) | [हिंदी](http://tarikmanoar.github.io/laravel--qrcode/hi) | [简体中文](http://tarikmanoar.github.io/laravel--qrcode/zh-cn)
 
 ## Try our dead simple, free file transfer service [keep.sh](https://keep.sh)
 
@@ -20,9 +20,47 @@ Upload files with a single curl command from your terminal! `curl --upload-file 
 
 <a id="docs-introduction"></a>
 ## Introduction
-Simple QrCode is an easy to use wrapper for the popular Laravel framework based on the great work provided by [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode).  We created an interface that is familiar and easy to install for Laravel users.
+Laravel QrCode is an easy to use wrapper for the popular Laravel framework (10, 11, 12) based on [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode). You can install, configure, and publish defaults with Pest for testing.
 
-![Example 1](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-1.png?raw=true) ![Example 2](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-2.png?raw=true)
+## Installation
+
+- Require the package via Composer:
+
+```bash
+composer require tarikmanoar/laravel-qrcode
+```
+
+- (Optional) Publish the config file:
+
+```bash
+php artisan vendor:publish --provider="Manoar\\QrCode\\QrCodeServiceProvider" --tag=config
+```
+
+## Usage
+
+- Use the Facade or helper functions in your code:
+
+```php
+use Manoar\\QrCode\\Facades\\QrCode;
+
+// Generate an SVG
+QrCode::generate('Make me into a QrCode!');
+
+// Generate a PNG and save to file
+QrCode::format('png')->generate('Save this!', storage_path('app/qrcode.png'));
+```
+
+## Configuration
+
+The config file `config/laravel-qrcode.php` contains defaults for `format`, `size`, `margin`, `error_correction`, and `encoding`. You can override these in your `.env` file:
+
+```
+QRCODE_FORMAT=png
+QRCODE_SIZE=200
+QRCODE_MARGIN=10
+QRCODE_ERROR_CORRECTION=H
+QRCODE_ENCODING=UTF-8
+```
 
 <a id="docs-upgrade"></a>
 ## Upgrade Guide
@@ -40,17 +78,8 @@ There was a Laravel facade issue within v3 that causes some loading issues.  The
 All references to the `QrCode` facade need to be changed to:
 
 ```
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Manoar\QrCode\Facades\QrCode;
 ```
-
-<a id="docs-configuration"></a>
-## Configuration
-
-#### Composer
-
-Run `composer require simplesoftwareio/simple-qrcode "~4"` to add the package. 
-
-Laravel will automatically pick up and install the package.
 
 <a id="docs-ideas"></a>
 ## Simple Ideas
@@ -79,12 +108,12 @@ You may embed a qrcode inside of an e-mail to allow your users to quickly scan. 
 ```
 // All examples below assume you are pulling in the QrCode facade with the following line of code. The Facade is auto-loaded for Laravel users.
 
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Manoar\QrCode\Facades\QrCode;
 ```
 
 Using the QrCode Generator is very easy.  The most basic syntax is:
 
-	use SimpleSoftwareIO\QrCode\Facades\QrCode;
+	use Manoar\QrCode\Facades\QrCode;
 
 	QrCode::generate('Make me into a QrCode!');
 
@@ -400,20 +429,20 @@ This helpers makes scannable QrCodes that can connect a phone to a WiFi network:
 
 You can use a prefix found in the table below inside the `generate` section to create a QrCode to store more advanced information:
 
-	QrCode::generate('http://www.simplesoftware.io');
+	QrCode::generate('http://www.tarikmanoar.com');
 
 
 | Usage | Prefix | Example |
 | --- | --- | --- |
-| Website URL | http:// | http://www.simplesoftware.io |
-| Secured URL | https:// | https://www.simplesoftware.io |
-| E-mail Address | mailto: | mailto:support@simplesoftware.io |
+| Website URL | http:// | http://www.tarikmanoar.com |
+| Secured URL | https:// | https://www.tarikmanoar.com |
+| E-mail Address | mailto: | mailto:support@tarikmanoar.com |
 | Phone Number | tel: | tel:555-555-5555 |
 | Text (SMS) | sms: | sms:555-555-5555 |
 | Text (SMS) With Pretyped Message | sms: | sms::I am a pretyped message |
 | Text (SMS) With Pretyped Message and Number | sms: | sms:555-555-5555:I am a pretyped message |
 | Geo Address | geo: | geo:-78.400364,-85.916993 |
-| MeCard | mecard: | MECARD:Simple, Software;Some Address, Somewhere, 20430;TEL:555-555-5555;EMAIL:support@simplesoftware.io; |
+| MeCard | mecard: | MECARD:Simple, Software;Some Address, Somewhere, 20430;TEL:555-555-5555;EMAIL:support@tarikmanoar.com; |
 | VCard | BEGIN:VCARD | [See Examples](https://en.wikipedia.org/wiki/VCard) |
 | Wifi | wifi: | wifi:WEP/WPA;SSID;PSK;Hidden(True/False) |
 
@@ -422,7 +451,7 @@ You can use a prefix found in the table below inside the `generate` section to c
 
 You may use this package outside of Laravel by instantiating a new `Generator` class.
 
-	use SimpleSoftwareIO\QrCode\Generator;
+	use Manoar\QrCode\Generator;
 
 	$qrcode = new Generator;
 	$qrcode->size(500)->generate('Make a qrcode without Laravel!');

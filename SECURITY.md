@@ -9,6 +9,6 @@
 
 ## Reporting a Vulnerability
 
-Please report security vulnerabilities responsibility by emailing `security@simplesoftware.io.`
+Please report security vulnerabilities responsibility by emailing `security@tarikmanoar.com.`
 
 We will fix the vulnerability privately, push a new release, and then go public with the notification.  

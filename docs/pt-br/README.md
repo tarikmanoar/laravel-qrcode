@@ -12,7 +12,7 @@
 
 <a id="docs-introduction"></a>
 ## Introdução
-Simple QrCode é um pacote de fácil uso do Framework Laravel, baseado no grande trabalho do [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode). Criamos uma interface que é fácil e familiar de instalar para usuários Laravel.
+Laravel QrCode é um pacote de fácil uso do Framework Laravel, baseado no grande trabalho do [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode). Criamos uma interface que é fácil e familiar de instalar para usuários Laravel.
 
 <a id="docs-translations"></a>
 ## Traduções
@@ -23,7 +23,7 @@ Simple QrCode é um pacote de fácil uso do Framework Laravel, baseado no grande
 
 #### Composer
 
-Primeiramente, adicione o pacote Simple QrCode ao seu `require` no arquivo `composer.json`:
+Primeiramente, adicione o pacote Laravel QrCode ao seu `require` no arquivo `composer.json`:
 
 	"require": {
 		"simplesoftwareio/simple-qrcode": "~2"
@@ -34,12 +34,12 @@ Em seguida, execute o comando `composer update`.
 #### Provedor de Serviço
 
 ###### Laravel <= 5.4
-Registre a `SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class` em seu `config/app.php` dentro do array `providers`.
+Registre a `Manoar\QrCode\QrCodeServiceProvider::class` em seu `config/app.php` dentro do array `providers`.
 
 #### Aliases
 
 ###### Laravel <= 5.4
-Finalmente, adicione `'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class` em seu arquivo de configuração `config/app.php` dentro do array `aliases`.
+Finalmente, adicione `'QrCode' => Manoar\QrCode\Facades\QrCode::class` em seu arquivo de configuração `config/app.php` dentro do array `aliases`.
 
 <a id="docs-ideas"></a>
 ## Ideias simples
@@ -313,20 +313,20 @@ Esse ajudante, faz com que QrCodes escaneáveis permitam o aparelho celular se c
 
 Você pode usar um prefixo listado na tabela abaixo dentro da seção `generate` para criar um QrCode para armazenar informações mais avançadas:
 
-	QrCode::generate('http://www.simplesoftware.io');
+	QrCode::generate('http://www.tarikmanoar.com');
 
 
 | Uso | Prefixo | Exemplo |
 | --- | --- | --- |
-| URL do site | http:// | http://www.simplesoftware.io |
-| URL segura | https:// | https://www.simplesoftware.io |
-| Endereço de e-mail | mailto: | mailto:support@simplesoftware.io |
+| URL do site | http:// | http://www.tarikmanoar.com |
+| URL segura | https:// | https://www.tarikmanoar.com |
+| Endereço de e-mail | mailto: | mailto:support@tarikmanoar.com |
 | Número de telefone | tel: | tel:555-555-5555 |
 | Texto (SMS) | sms: | sms:555-555-5555 |
 | Texto (SMS) With Pretyped Message | sms: | sms::I am a pretyped message |
 | Texto (SMS) With Pretyped Message and Number | sms: | sms:555-555-5555:I am a pretyped message |
 | Coordenadas | geo: | geo:-78.400364,-85.916993 |
-| MeCard | mecard: | MECARD:Simple, Software;Some Address, Somewhere, 20430;TEL:555-555-5555;EMAIL:support@simplesoftware.io; |
+| MeCard | mecard: | MECARD:Simple, Software;Some Address, Somewhere, 20430;TEL:555-555-5555;EMAIL:support@tarikmanoar.com; |
 | VCard | BEGIN:VCARD | [Veja Exemplos](https://en.wikipedia.org/wiki/VCard) |
 | Wifi | wifi: | wifi:WEP/WPA;SSID;PSK;Hidden(True/False) |
 
@@ -335,7 +335,7 @@ Você pode usar um prefixo listado na tabela abaixo dentro da seção `generate`
 
 Você pode usar o pacote fora do Laravel instanciando a classe `BaconQrCodeGenerator`.
 
-	use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
+	use Manoar\QrCode\BaconQrCodeGenerator;
 
 	$qrcode = new BaconQrCodeGenerator;
 	$qrcode->size(500)->generate('Crie um QrCode sem Laravel!');
