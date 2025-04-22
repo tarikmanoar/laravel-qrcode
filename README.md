@@ -7,6 +7,8 @@ Laravel QrCode
 
 ## Installation
 
+Compatible with Laravel 9+ on PHP 8.0+
+
 Run the following command to install the package:
 
 ```bash
