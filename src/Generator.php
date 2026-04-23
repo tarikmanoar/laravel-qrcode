@@ -75,7 +75,7 @@ class Generator
      *
      * @var string
      */
-    protected $encoding = Encoder::DEFAULT_BYTE_MODE_ECODING;
+    protected $encoding = Encoder::DEFAULT_BYTE_MODE_ENCODING;
 
     /**
      * The style of the blocks within the QrCode.
@@ -418,6 +418,122 @@ class Generator
     }
 
     /**
+     * Sets the foreground color using a hex string (e.g. '#ff0000' or 'ff0000').
+     *
+     * @param string $hex
+     * @return Generator
+     * @throws InvalidArgumentException
+     */
+    public function colorHex(string $hex): self
+    {
+        [$r, $g, $b] = $this->hexToRgb($hex);
+        $this->color = $this->createColor($r, $g, $b);
+
+        return $this;
+    }
+
+    /**
+     * Sets the background color using a hex string (e.g. '#ffffff' or 'ffffff').
+     *
+     * @param string $hex
+     * @return Generator
+     * @throws InvalidArgumentException
+     */
+    public function backgroundColorHex(string $hex): self
+    {
+        [$r, $g, $b] = $this->hexToRgb($hex);
+        $this->backgroundColor = $this->createColor($r, $g, $b);
+
+        return $this;
+    }
+
+    /**
+     * Sets eye colors using hex strings for a given eye index (0, 1, or 2).
+     *
+     * @param int $eyeNumber
+     * @param string $innerHex Hex color for the inner eye (e.g. '#000000')
+     * @param string $outerHex Hex color for the outer eye (e.g. '#000000')
+     * @return Generator
+     * @throws InvalidArgumentException
+     */
+    public function eyeColorHex(int $eyeNumber, string $innerHex, string $outerHex = '#000000'): self
+    {
+        if ($eyeNumber < 0 || $eyeNumber > 2) {
+            throw new InvalidArgumentException("\$eyeNumber must be 0, 1, or 2.  {$eyeNumber} is not valid.");
+        }
+
+        [$iR, $iG, $iB] = $this->hexToRgb($innerHex);
+        [$oR, $oG, $oB] = $this->hexToRgb($outerHex);
+
+        $this->eyeColors[$eyeNumber] = new EyeFill(
+            $this->createColor($iR, $iG, $iB),
+            $this->createColor($oR, $oG, $oB)
+        );
+
+        return $this;
+    }
+
+    /**
+     * Generates the QrCode and returns it as a base64-encoded string.
+     *
+     * @param string $text
+     * @return string
+     * @throws WriterException
+     */
+    public function generateBase64(string $text): string
+    {
+        $result = $this->generate($text);
+        $content = $result instanceof \Illuminate\Support\HtmlString ? $result->toHtml() : (string) $result;
+
+        return base64_encode($content);
+    }
+
+    /**
+     * Generates the QrCode and returns it as a data URI suitable for use in an <img> src attribute.
+     *
+     * @param string $text
+     * @return string
+     * @throws WriterException
+     */
+    public function generateDataUri(string $text): string
+    {
+        $mime = match ($this->format) {
+            'png' => 'image/png',
+            'eps' => 'application/postscript',
+            default => 'image/svg+xml',
+        };
+
+        $base64 = $this->generateBase64($text);
+
+        return "data:{$mime};base64,{$base64}";
+    }
+
+    /**
+     * Resets the generator to its default state.
+     *
+     * @return Generator
+     */
+    public function reset(): self
+    {
+        $this->format = 'svg';
+        $this->pixels = 100;
+        $this->margin = 0;
+        $this->errorCorrection = null;
+        $this->encoding = Encoder::DEFAULT_BYTE_MODE_ENCODING;
+        $this->style = 'square';
+        $this->styleSize = null;
+        $this->eyeStyle = null;
+        $this->color = null;
+        $this->backgroundColor = null;
+        $this->eyeColors = [];
+        $this->gradient = null;
+        $this->imageMerge = null;
+        $this->imagePercentage = .2;
+
+        return $this;
+    }
+
+    /**
      * Fetches the Writer.
      *
      * @param ImageRenderer $renderer
@@ -545,6 +661,28 @@ class Generator
     }
 
     /**
+     * Converts a hex color string to an [R, G, B] array.
+     *
+     * @param string $hex
+     * @return array{int, int, int}
+     * @throws InvalidArgumentException
+     */
+    protected function hexToRgb(string $hex): array
+    {
+        $hex = ltrim($hex, '#');
+
+        if (strlen($hex) === 3) {
+            $hex = $hex[0].$hex[0].$hex[1].$hex[1].$hex[2].$hex[2];
+        }
+
+        if (strlen($hex) !== 6 || ! ctype_xdigit($hex)) {
+            throw new InvalidArgumentException("Invalid hex color: #{$hex}");
+        }
+
+        return [hexdec(substr($hex, 0, 2)), hexdec(substr($hex, 2, 2)), hexdec(substr($hex, 4, 2))];
+    }
+
+    /**
      * Creates a new DataType class dynamically.
      *
      * @param string $method
@@ -569,10 +707,13 @@ class Generator
      */
     protected function formatClass(string $method): string
     {
-        $method = ucfirst($method);
+        // Try ucfirst (e.g. "email" → "Email")
+        $class = "Manoar\QrCode\DataTypes\\".ucfirst($method);
+        if (class_exists($class)) {
+            return $class;
+        }
 
-        $class = "Manoar\QrCode\DataTypes\\".$method;
-
-        return $class;
+        // Fallback: try uppercase for abbreviations (e.g. "btc" → "BTC", "otp" → "OTP")
+        return "Manoar\QrCode\DataTypes\\".strtoupper($method);
     }
 }
