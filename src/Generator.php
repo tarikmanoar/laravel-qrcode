@@ -75,7 +75,7 @@ class Generator
      *
      * @var string
      */
-    protected $encoding = Encoder::DEFAULT_BYTE_MODE_ECODING;
+    protected $encoding = Encoder::DEFAULT_BYTE_MODE_ENCODING;
 
     /**
      * The style of the blocks within the QrCode.
@@ -519,7 +519,7 @@ class Generator
         $this->pixels = 100;
         $this->margin = 0;
         $this->errorCorrection = null;
-        $this->encoding = Encoder::DEFAULT_BYTE_MODE_ECODING;
+        $this->encoding = Encoder::DEFAULT_BYTE_MODE_ENCODING;
         $this->style = 'square';
         $this->styleSize = null;
         $this->eyeStyle = null;
